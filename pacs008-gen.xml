@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusMsg>
+    <AppHdr xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:head.001.001.01 NPP_AU_General_SR2015_20151111_NPP_AU_General_SR2015_BusinessApplicationHeaderV01_head_001_001_01_20160202_0029.xsd">
+        <Fr>
+            <FIId>
+                <FinInstnId>
+                    <BICFI>{0}</BICFI>
+                </FinInstnId>
+            </FIId>
+        </Fr>
+        <To>
+            <FIId>
+                <FinInstnId>
+                    <BICFI>{1}</BICFI>
+                </FinInstnId>
+            </FIId>
+        </To>
+        <BizMsgIdr>SITTESTING186</BizMsgIdr>
+        <MsgDefIdr>pacs.008.001.05</MsgDefIdr>
+        <BizSvc>npp.clear.01-x2p1.01</BizSvc>
+        <CreDt>{2}</CreDt>
+        <Prty>NORM</Prty>
+    </AppHdr>
+    <Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.05 SCT_pacs.008.001.05-20151026.xsd">
+        <FIToFICstmrCdtTrf>
+            <GrpHdr>
+                <MsgId>SITTESTING186</MsgId>
+                <CreDtTm>2016-04-27T16:45:21.487Z</CreDtTm>
+                <NbOfTxs>1</NbOfTxs>
+                <SttlmInf>
+                    <SttlmMtd>CLRG</SttlmMtd>
+                    <ClrSys>
+                        <Cd>NPP</Cd>
+                    </ClrSys>
+                </SttlmInf>
+                <InstgAgt>
+                    <FinInstnId>
+                        <BICFI>{3}</BICFI>
+                    </FinInstnId>
+                </InstgAgt>
+                <InstdAgt>
+                    <FinInstnId>
+                        <BICFI>{4}</BICFI>
+                    </FinInstnId>
+                </InstdAgt>
+            </GrpHdr>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <EndToEndId>{5}</EndToEndId>
+					<TxId>{6}</TxId>
+                </PmtId>
+                <PmtTpInf>
+                    <SvcLvl>
+                        <Prtry>npp.clear.01-x2p1.01</Prtry>
+                    </SvcLvl>
+                </PmtTpInf>
+                <IntrBkSttlmAmt Ccy="AUD">{7}</IntrBkSttlmAmt>
+                
+				<IntrBkSttlmDt>2016-04-06</IntrBkSttlmDt>
+                
+				<InstdAmt Ccy="AUD">111.11</InstdAmt>
+                <ChrgBr>SLEV</ChrgBr>
+                <Dbtr>
+                    <Nm>NPP TESTING IN DEV ENV</Nm>
+                    <CtctDtls>
+                        <Nm>Customer 1</Nm>
+                    </CtctDtls>
+
+                </Dbtr>
+                <DbtrAcct>
+                    <Id>
+                        <Othr>
+                            <Id>{8}</Id>
+                            <SchmeNm>
+                                <Cd>BBAN</Cd>
+                            </SchmeNm>
+                            <Issr>{9}</Issr>
+                        </Othr>
+                    </Id>
+                </DbtrAcct>
+                <DbtrAgt>
+                    <FinInstnId>
+                        <BICFI>{10}</BICFI>
+                    </FinInstnId>
+                </DbtrAgt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BICFI>{11}</BICFI>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm> Net Mobile</Nm>
+                    <CtctDtls>
+                        <Nm>The Citizen's Department</Nm>
+                    </CtctDtls>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <Othr>
+                            <Id>{12}</Id>
+                            <SchmeNm>
+                                <Cd>BBAN</Cd>
+                            </SchmeNm>
+                            <Issr>{13}</Issr>
+                        </Othr>
+                    </Id>
+                    <Ccy>AUD</Ccy>
+                </CdtrAcct>
+                <RgltryRptg>
+                    <Dtls>
+                        <Tp>INDV</Tp>
+                        <Cd>DBTRTP</Cd>
+                    </Dtls>
+                </RgltryRptg>
+                <RmtInf>
+                    <Ustrd>US606_TC3_Fixed_PD</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+        </FIToFICstmrCdtTrf>
+    </Document>
+</BusMsg>
