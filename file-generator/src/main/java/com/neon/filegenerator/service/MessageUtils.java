@@ -1,27 +1,13 @@
 package com.neon.filegenerator.service;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
-import java.io.StringReader;
 import java.nio.charset.StandardCharsets;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Result;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.FileCopyUtils;
-import org.w3c.dom.Document;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 
 public class MessageUtils implements Serializable {
 
@@ -44,24 +30,22 @@ public class MessageUtils implements Serializable {
 		return data;
 	}
 
-	public static File stringToXML(String xmlString) throws Exception {
+	public static String stringToXML(String xmlString, String pmtIdEndToEndId) throws Exception {
 
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		/*DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
 		DocumentBuilder builder;
 		builder = factory.newDocumentBuilder();
 
 		// Use String reader
-		Document document = builder.parse(new InputSource(new StringReader(xmlString)));	
-		File file = new File("pacsxml.xml");
-		 TransformerFactory tranFactory = TransformerFactory.newInstance();
-		 Transformer aTransformer = tranFactory.newTransformer();
-		 Source src = new DOMSource( document );
-		 Result dest = new StreamResult( file );
-		 aTransformer.transform( src, dest );
+		Document document = builder.parse(new InputSource(new StringReader(xmlString)));	*/
+		
+		 java.io.FileWriter fw = new java.io.FileWriter("output-files/"+pmtIdEndToEndId+".xml");
+		    fw.write(xmlString);
+		    fw.close();
 		 
-
-		return file;
+		 return "output-files/"+pmtIdEndToEndId+".xml";
+		
 	}
 
 }

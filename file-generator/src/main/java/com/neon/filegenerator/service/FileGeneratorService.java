@@ -1,8 +1,6 @@
 package com.neon.filegenerator.service;
 
-import java.io.File;
 import java.text.MessageFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
@@ -28,15 +26,12 @@ public class FileGeneratorService {
 		
 		String generatedXml = messageformat.format(objs);
 		
-		return generatedXml;
+		String fileName = MessageUtils.stringToXML(generatedXml,pmtIdEndToEndId);
+		return fileName;
 		
 	}
 	
-	public File generateXML(String generatedXml) throws Exception{
-		File xmlFile = MessageUtils.stringToXML(generatedXml);
-		return xmlFile;
-	}
-
+	
 	
 
 }
